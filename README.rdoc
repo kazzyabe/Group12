@@ -24,5 +24,88 @@ Things you may want to cover:
 * ...
 
 
+----------------------------PROPOSAL
+QMi
+Group 12
+James Araujo • Dawn Chandler • Kazuki Yabe • Justin Mang • Gurtej Rai
+
+
+Summary
+
+For adults interested in online dating, many will feel dissatisfied by having to choose between applications that are superficially photo-based,
+ and those that are dauntingly algorithmic in their match selection process. QMi is a dating app that proposes a practical intermediate.
+  Users can login to update their profiles with photos and interests, browse users determined by a matching algorithm,
+  filter results by user preferences and geographical radius, and chat with others via messaging integration, as with most dating applications.
+   The unique feature of QMi is that a user must write a template-based quiz that any other user must answer and receive acceptance upon before
+    they are able to message one another. Potential matches are organised by user photo tiles, and a quiz preview appears on mouseover.
+    Although this process may seem lengthy, character limits are imposed on any text in user profiles or quiz responses, as well as the length of quizzes.
+     Through these restrictions, QMi is able to hold user interest while also eliciting less obvious details about users, based on how quizzes are written
+      and responded to, which makes for unique and relevant initiations of conversation. In nearly every aspect of this web application, one user can flag
+       another for inappropriate photos, quizzes, responses, or chat messages, which can be reviewed by an administrator. Administrators can additionally
+       review data collected from users regarding demographics, account activity, and general trends. QMi provides an inventive way for users to get to know
+       each other without making online dating tedious or reducing it to a cursory game.
+
+
+Definition
+
+	The goal of QMi is to be a web application in which people who are serious about online dating will use as their go-to resource.
+  As it is, existing dating applications on the market are superficially marketed, meaning that their aim is geared more towards casual relationships.
+   By creating an application that incorporates user-created quizzes and an integrated messaging service upon matching, users will find a greater compatibility
+   through both their looks and their personalities. In this environment, users will spend less time and money on dead-end interactions and unsatisfactory dates.
+   Ideally, this application will be marketed to any adult of age 18 or older, a large subset of whom will be busy individuals who do not have time to meet others
+    in social settings..
+
+
+Scope
+
+	At the core of its purpose, QMi’s main feature is the ability to fill out questionnaires that users post on their ‘dating profile’,
+  which other users can then fill out, and based on the answers they provide, the original user (who posted the questionnaire) will be able to
+   accept or decline their answers. If they accept their answers, the two users will be matched. Similarly, if they decline each other’s answers,
+   the two will not be matched and their profiles will be removed from each other’s homepages as available matches. Upon matching, users will be able
+   to chat with one another through an integrated chat messaging API.
+	The following subfeatures of this main process is the ability to post questionnaires, answer other questionnaires,
+   chat with matches, edit account information, set match preferences and geographical radius, the latter of which will be implemented using Google Maps.
+    Users can also report illegal or inappropriate content or behaviour which includes but does not limit photos, questionnaires, and chat conversation.
+    There will be multiple restrictions in the application such as setting a limit to how many questionnaires a user can fill out per day to promote the reuse
+    of the application on a daily basis.
+
+Typically, a user scenario would be as follows:
+
+The user will be able to register onto the site and set up an account profile by providing descriptions of themselves and selecting certain interests and preferences.
+The user will be able to write a questionnaire that they want other users to fill out and review before being matched to them.
+The user will be able to set a geographical radius to which they will be able to view other user profiles who have their radius set less than or equal to other users.
+The user will be able to edit particular filters in their potential matches, such as age, sex, and height.
+The user will be able to flag inappropriate or illegal behaviour on the application by other users, which will be reported to an administrator.
+The user will be able to browse a theoretically infinite feed of staggered photo tiles on the homepage which suit their match filters.
+The user will be able to chat with other users that they have matched with through an integrated messaging service.
+
+Typically, an administrator scenario would be as follows:
+
+The administrator will be able to review user-reported content.
+The administrator will be able to suspend or ban users based on their behaviour.
+The administrator will be able to edit user profile information if it is deemed inappropriate or misleading.
+The administrator will be able to view analyses of user demographics and activity.
+
+	The project will require every group member to put in consistent and efficient time to be able to produce the product as intended above.
+  There is a lot to be done: from UI, to a match-making algorithm, to implementing all the features and different functionalities of the application,
+   and creating a polished, manageable, and workable product.
+
+
+Group Management
+
+Git Repository: https://github.com/kazzyabe/Group12.git
+
+	To ensure that group work is being efficiently implemented, tested, and that the project’s scope is being met, our team plans to meet twice a
+   week at regular times to discuss where we are at in development and where we need to be by the next time we meet. By ensuring these milestones
+    are met, we can monitor the amount of progress we are making towards the end goal and determine what to spend more time on, such as on polishing
+     existing features rather than creating more at a lower quality.
+Communication between meetings will take place over Slack, a professional messaging service. Descriptions of general user and admin stories,
+ and the current stage of their implementation will be placed on Trello. Any spreadsheets, slide presentations, or word processing will be available
+  to the entire group for viewing and editing on Google Drive. 
+
+
+
+
+
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
