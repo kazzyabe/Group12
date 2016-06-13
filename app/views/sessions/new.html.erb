@@ -1,7 +1,13 @@
+<% @page_title = "UserAuth | Login" %>
 <div class="login">
+  <h1>Login</h1>
   <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.email_field :username, :placeholder => "username" %>
-    <%= f.password_field :password, :placeholder => "Password" %>
-    <%= f.submit "Log in", class: "btn-submit" %>
+    <%= f.email_field :username, :placeholder => "username" %> <br>
+    <%= f.password_field :password, :placeholder => "Password" %> <br>
+    <%= f.submit "Log in", class: "btn-submit" %> <br>
   <% end %>
+  <p>
+    Don't have account yet? <br>
+    Sign up <%= link_to "here", 'login' %>
+  </p>
 </div>
