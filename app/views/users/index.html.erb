@@ -1,12 +1,16 @@
 <h1>Users List</h1>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Username</th>
     <th>Email</th>
     <th>Role</th>
   </tr>
   <% @user.each do |u| %>
-    <tr>
+    <% if u.role %>
+      <tr class="danger">
+    <% else %>
+      <tr>
+    <% end %>
       <td><%= u.username %></td>
       <td><%= u.email %></td>
       <% if u.role %>
@@ -17,8 +21,5 @@
     </tr>
   <% end %>
 </table>
-
-<ul>
-  <li><%= link_to "logout", 'logout' %></li>
-  <li><%= link_to "back", '/' %></li>
-</ul>
+<%= link_to "logout", 'logout', class: "btn btn-primary" %>
+<%= link_to "back", '/', class: "btn btn-primary" %>

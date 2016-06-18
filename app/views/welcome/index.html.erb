@@ -1,16 +1,17 @@
 <% @page_title = "Welcome" %>
-<h2>Welcome</h2>
-<% if current_user %>
-  <ul>
-    <li><%= current_user.email %></li>
-    <li><%= link_to "Logout", 'logout' %></li>
-    <% if current_user.admin? %>
-      <li><%= link_to "Users List", 'users' %></li>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 text-center">
+    <% if current_user %>
+      <h2>Welcome <%= current_user.username %></h2>
+      <%= current_user.email %> <br>
+      <%= link_to "Logout", 'logout', class: "btn btn-primary" %>
+      <% if current_user.admin? %>
+        <%= link_to "Users List", 'users', class: "btn btn-primary" %>
+      <% end %>
+    <% else %>
+      <h2>Welcome</h2>
+      <%= link_to "Login", 'login', class: "btn btn-primary" %>
+      <%= link_to "Signup", 'signup', class: "btn btn-primary" %>
     <% end %>
-  </ul>
-<% else %>
-  <ul>
-    <li><%= link_to "Login", 'login' %></a></li>
-    <li><%= link_to "Signup", 'signup' %></a></li>
-  </ul>
-<% end %>
+  </div>
+</div>
