@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :require_admin, only: [:index]
+
+  def index
+    @user = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -13,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to '/signup'
     end
   end
-  
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)

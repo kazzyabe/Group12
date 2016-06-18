@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
   def require_user
     redirect_to '/signup' unless current_user
   end
+
+  def require_admin
+    redirect_to '/' unless current_user.admin?
+  end
 end
