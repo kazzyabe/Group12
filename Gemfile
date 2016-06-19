@@ -33,9 +33,8 @@ gem 'bootstrap-sass', '3.2.0.0'
 gem 'less-rails'
 gem 'therubyracer'
 gem 'execjs'
-
-# Twitter社が提供しているCSSとJavaScriptのフレームワーク
 gem 'twitter-bootstrap-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -4,6 +4,7 @@
     <th>Username</th>
     <th>Email</th>
     <th>Role</th>
+    <th>Actions</th>
   </tr>
   <% @user.each do |u| %>
     <% if u.role %>
@@ -15,8 +16,12 @@
       <td><%= u.email %></td>
       <% if u.role %>
         <td>Admin</td>
+        <td></td>
       <% else %>
         <td>User</td>
+        <td><%= link_to 'Destroy', user_path(u.id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
       <% end %>
     </tr>
   <% end %>
