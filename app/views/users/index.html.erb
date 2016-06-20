@@ -1,0 +1,30 @@
+<h1>Users List</h1>
+<table class="table table-striped">
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Actions</th>
+  </tr>
+  <% @user.each do |u| %>
+    <% if u.role %>
+      <tr class="danger">
+    <% else %>
+      <tr>
+    <% end %>
+      <td><%= u.username %></td>
+      <td><%= u.email %></td>
+      <% if u.role %>
+        <td>Admin</td>
+        <td></td>
+      <% else %>
+        <td>User</td>
+        <td><%= link_to 'Destroy', user_path(u.id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "logout", 'logout', class: "btn btn-primary" %>
+<%= link_to "back", '/', class: "btn btn-primary" %>
