@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
   get 'users' => 'users#index'
+  get '/index' => 'welcome#index'
   resources :users
 
   #resources :sessions
