@@ -1,140 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-
-    <script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-      <link rel="stylesheet" href="css/font-awesome.css" />
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css.erb" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-
 	</head>
 	<body class="landing">
+		<% if user_signed_in? %>
+		<% else %>
+			<!-- Before login -->
+			<!-- Banner -->
+				<section id="banner">
+					<h2>QMi</h2>
+					<p>In a world so busy, it's no wonder why people need effective
+	        solutions to meeting new and interesting people. You came to the
+	        right place.
+	        </p>
 
-		<!-- Header -->
+	        <p class="lead">
+	          <%= link_to "Sign me up!", new_user_registration_path, class: "button" %>
+	        </p>
+				</section>
 
-      <header id="header">
-				<h1>Welcome</h1>
-				<nav id="nav">
-					<ul>
-						<li><%=link_to 'Home', '/' %></li>
-						<!-- user_signed_in? : check if user signed in -->
-				    <% if user_signed_in? %>
-				      <!-- current_user : gives currently logged in user's object-->
-				      <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-				      <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
-				    <% else %>
-				      <li><%= link_to "Sign Up", new_user_registration_path %></li>
-				      <li><%= link_to "Already have an account?", new_user_session_path, class: "button special" %></li>
-				    <% end %>
-					</ul>
-				</nav>
-			</header>
-
-
-		<!-- Banner -->
-			<section id="banner">
-				<h2>QMi</h2>
-				<p>In a world so busy, it's no wonder why people need effective
-        solutions to meeting new and interesting people. You came to the
-        right place.
-        </p>
-
-        <p class="lead">
-          <%= link_to "Sign me up!", new_user_registration_path, class: "button" %>
-        </p>
-			</section>
-
-    <!--First Section -->
-    <!-- One -->
-			<section id="one" class="wrapper style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>It's never been easier.</h2>
-						<p>What are some of the features I can expect?</p>
-					</header>
-					<div class="row 150%">
-						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color1 fa fa-cog fa-3x"></i>
-								<h3>Fill Out a Questionnaire</h3>
-								<p>Create a series of questions using our integrated tools which other
-                users will have to answer. When they're done, their answers will be sent to
-              you and if you like what their responses were, accept it and you can begin
-            chatting immediately!</p>
-							</section>
-						</div>
-						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color9 fa-wrench fa-3x"></i>
-								<h3>Set Your Preferences</h3>
-								<p>Choose from a variety of matchmaking preferences, such as geographical radius,
-                  or gender -- and we'll take care of the rest.
-                the rest.</p>
-							</section>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color6 fa-heart fa-3x"></i>
-								<h3>Match With Compatible People</h3>
-								<p>On top of having a short profile bibliography, we'll help you create a more
-                authentic experience with other people through our unique questionnaire system --
-              ensuring you don't get weirdos or people that don't have the same mindset as you.</p>
-							</section>
+	    <!--First Section -->
+	    <!-- One -->
+				<section id="one" class="wrapper style1 special">
+					<div class="container">
+						<header class="major">
+							<h2>It's never been easier.</h2>
+							<p>What are some of the features I can expect?</p>
+						</header>
+						<div class="row 150%">
+							<div class="4u 12u$(medium)">
+								<section class="box">
+									<i class="icon big rounded color1 fa fa-cog fa-3x"></i>
+									<h3>Fill Out a Questionnaire</h3>
+									<p>Create a series of questions using our integrated tools which other
+	                users will have to answer. When they're done, their answers will be sent to
+	              you and if you like what their responses were, accept it and you can begin
+	            chatting immediately!</p>
+								</section>
+							</div>
+							<div class="4u 12u$(medium)">
+								<section class="box">
+									<i class="icon big rounded color9 fa-wrench fa-3x"></i>
+									<h3>Set Your Preferences</h3>
+									<p>Choose from a variety of matchmaking preferences, such as geographical radius,
+	                  or gender -- and we'll take care of the rest.
+	                the rest.</p>
+								</section>
+							</div>
+							<div class="4u$ 12u$(medium)">
+								<section class="box">
+									<i class="icon big rounded color6 fa-heart fa-3x"></i>
+									<h3>Match With Compatible People</h3>
+									<p>On top of having a short profile bibliography, we'll help you create a more
+	                authentic experience with other people through our unique questionnaire system --
+	              ensuring you don't get weirdos or people that don't have the same mindset as you.</p>
+								</section>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
 
-      <!-- end -->
+	      <!-- end -->
 
-      <!-- Second Section -->
-      <section id="two" class="wrapper style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Don't believe us?</h2>
-						<p>Check out some testimonials from REAL users.</p>
-					</header>
-					<section class="profiles">
-						<div class="row">
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-							 <%= image_tag('profile_placeholder.gif') %>
-								<h4>Michael Jones</h4>
-								<p>I was on Tinder before I found QMi, and it was the greatest
-                switch I've ever made. I've met authentic people who have more in common
-              with me, and it's amazing.</p>
-							</section>
-							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<%= image_tag('profile_placeholder.gif') %>
-								<h4>Sharon Smith</h4>
-								<p>All other online dating apps I've tried have left me feeling
-                unsatisified and like I've wasted my time. QMi is great.</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<%= image_tag('profile_placeholder.gif') %>
-								<h4>Bobby Chan</h4>
-								<p>QMi is a great application for anyone who's serious about
-                the online dating scene. It's never been easier to get meet
-              like-minded individuals who share a similar mindset to yours.</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<%= image_tag('profile_placeholder.gif') %>
-								<h4>Karen Vesuvius</h4>
-								<p>I love it. Simply put.</p>
-							</section>
-						</div>
-					</section>
-
-
+	      <!-- Second Section -->
+	      <section id="two" class="wrapper style2 special">
+					<div class="container">
+						<header class="major">
+							<h2>Don't believe us?</h2>
+							<p>Check out some testimonials from REAL users.</p>
+						</header>
+						<section class="profiles">
+							<div class="row">
+								<section class="3u 6u(medium) 12u$(xsmall) profile">
+								 <%= image_tag('profile_placeholder.gif') %>
+									<h4>Michael Jones</h4>
+									<p>I was on Tinder before I found QMi, and it was the greatest
+	                switch I've ever made. I've met authentic people who have more in common
+	              with me, and it's amazing.</p>
+								</section>
+								<section class="3u 6u$(medium) 12u$(xsmall) profile">
+									<%= image_tag('profile_placeholder.gif') %>
+									<h4>Sharon Smith</h4>
+									<p>All other online dating apps I've tried have left me feeling
+	                unsatisified and like I've wasted my time. QMi is great.</p>
+								</section>
+								<section class="3u 6u(medium) 12u$(xsmall) profile">
+									<%= image_tag('profile_placeholder.gif') %>
+									<h4>Bobby Chan</h4>
+									<p>QMi is a great application for anyone who's serious about
+	                the online dating scene. It's never been easier to get meet
+	              like-minded individuals who share a similar mindset to yours.</p>
+								</section>
+								<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
+									<%= image_tag('profile_placeholder.gif') %>
+									<h4>Karen Vesuvius</h4>
+									<p>I love it. Simply put.</p>
+								</section>
+							</div>
+						</section>
+					<% end %>
 	</body>
 </html>
