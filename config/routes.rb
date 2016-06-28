@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root to: 'welcome#landing'
   # You can have the root of your site routed with "root"
-  resources :users
 
   #resources :sessions
   # Example of regular route:
