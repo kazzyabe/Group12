@@ -2,15 +2,9 @@
 	<body class="landing">
 		<% if user_signed_in? %>
 			<!-- Main -->
-				<section id="banner" class="wrapper">
-					<div class="container">
-
-						<header class="major">
-							<h2>It's nice to see you again.</h2>
-							<p>Ready to meet new people?</p>
-						</header>
-
-					</div>
+				<section id="banner">
+					<h2>It's nice to see you again.</h2>
+					<p>Ready to meet new people?</p>
 				</section>
 		<% else %>
 			<!-- Before login -->
@@ -106,4 +100,5 @@
 								</section>
 							</div>
 						</section>
-	</body>
+			<% end %>
+		</body>
