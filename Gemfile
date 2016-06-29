@@ -28,12 +28,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# devise
+gem 'devise'
+gem 'cancancan'
+gem 'rails_admin'
 # bootstrap
-gem 'bootstrap-sass', '3.2.0.0'
-gem 'less-rails'
-gem 'therubyracer'
-gem 'execjs'
-gem 'twitter-bootstrap-rails'
+#gem 'bootstrap-sass', '3.2.0.0'
+#gem 'less-rails'
+#gem 'therubyracer'
+#gem 'execjs'
+#gem 'twitter-bootstrap-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
