@@ -29,7 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # devise
-
+gem 'devise'
+gem 'cancancan'
+gem 'rails_admin'
 # bootstrap
 #gem 'bootstrap-sass', '3.2.0.0'
 #gem 'less-rails'
