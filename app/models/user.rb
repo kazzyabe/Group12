@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
-  has_secure_password
-  validates :username, :email, uniqueness: true, presence: true
+  has_and_belongs_to_many :roles
 
-  def admin?
-    self.role == 'admin'
+  def has_role?(name)
+    self.roles.where(name: name).length > 0
   end
+  
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end

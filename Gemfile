@@ -7,6 +7,15 @@ gem 'rails', '4.2.6'
 gem 'pg'
 # unicorn
 gem 'puma'
+
+# for authentication
+# devise
+gem 'devise'
+# cancancan
+gem 'cancancan'
+# rails_admin
+gem 'rails_admin'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

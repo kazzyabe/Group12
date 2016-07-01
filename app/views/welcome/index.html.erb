@@ -33,6 +33,15 @@
                         <% end %>
         </ul>
       </nav>
+			<% if user_signed_in? %>
+				<h1>Welcome, <%= current_user %></h1>
+				<!-- current_user : gives currently logged in user's object-->
+				<li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+				<li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+			<% else %>
+				<li><%= link_to "Sign Up", new_user_registration_path %></li>
+				<li><%= link_to "Already have an account?", new_user_session_path, class: "button special" %></li>
+			<% end %>
     </header>
 
     <!-- Main -->
