@@ -1,17 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>QMi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/skel.min.js"></script>
+  <script src="js/skel-layers.min.js"></script>
+  <script src="js/init.js"></script>
+  <noscript>
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css.erb" />
+    <link rel="stylesheet" href="css/style-xlarge.css" />
+  </noscript>
 </head>
-<body>
+<body id="landing">
+  <header id="header">
+    <h1>Welcome</h1>
+    <nav id="nav">
+      <ul>
+        <li><%=link_to 'Home', '/' %></li>
+        <!-- user_signed_in? : check if user signed in -->
+        <% if user_signed_in? %>
+          <!-- current_user : gives currently logged in user's object-->
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+          <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+          <% if current_user.role == "admin" %>
+            <li><%= link_to 'admin', '/admin' %></li>
+          <% end %>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Already have an account?", new_user_session_path, class: "button special" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p><%= alert %></p>
+  <% end %>
 
-
-
-<%= yield %>
+  <%= yield %>
 
 
 </body>
