@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 	<!-- Main -->
 		<section id="banner">
-			<h2>It's nice to see you again.</h2>
+			<h2>It's nice to see you again, <%= current_user.username %></h2>
 			<p>Ready to meet new people?</p>
 		</section>
 <% else %>
