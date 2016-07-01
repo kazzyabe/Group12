@@ -1,6 +1,4 @@
-class WelcomeController < ApplicationController
-  before_filter :authenticate_user!
-  
+class WelcomeController < ApplicationController  
   def index
   end
 
