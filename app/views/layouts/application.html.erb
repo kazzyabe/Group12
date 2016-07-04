@@ -35,7 +35,7 @@
           <!-- current_user : gives currently logged in user's object-->
           <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
           <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
-          <% if current_user.role == "admin" %>
+          <% if current_user.role? %>
             <li><%= link_to 'admin', '/admin' %></li>
           <% end %>
         <% else %>

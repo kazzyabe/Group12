@@ -6,7 +6,7 @@
 				Profile <br>
 				Username: <%= current_user.username %> <br />
 				Email: <%= current_user.email %> <br />
-				<% if current_user.role == "admin" %>
+				<% if current_user.role? %>
 					Role: Admin <br />
 				<% end %>
 			</p>
