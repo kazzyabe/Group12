@@ -24,20 +24,35 @@
     <link rel="stylesheet" href="css/style-xlarge.css" />
   </noscript>
 </head>
-<body>
+<body id="landing">
   <header id="header">
     <h1>Welcome</h1>
     <nav id="nav">
       <ul>
         <li><%=link_to 'Home', '/' %></li>
-
-        <li><%=link_to 'Already have an account?', 'login', class: "button special" %></li>
+        <!-- user_signed_in? : check if user signed in -->
+        <% if user_signed_in? %>
+          <!-- current_user : gives currently logged in user's object-->
+          <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+          <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+          <% if current_user.role == "admin" %>
+            <li><%= link_to 'admin', '/admin' %></li>
+          <% end %>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Already have an account?", new_user_session_path, class: "button special" %></li>
+        <% end %>
       </ul>
     </nav>
   </header>
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p><%= alert %></p>
+  <% end %>
 
-
-<%= yield %>
+  <%= yield %>
 
 
 </body>

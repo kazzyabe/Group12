@@ -1,15 +1,22 @@
-<body class="landing">
+<% if user_signed_in? %>
+	<!-- Main -->
+		<section id="banner">
+			<h2>It's nice to see you again, <%= current_user.username %></h2>
+			<p>Ready to meet new people?</p>
+		</section>
+<% else %>
+	<!-- Before login -->
 	<!-- Banner -->
 		<section id="banner">
 			<h2>QMi</h2>
 			<p>In a world so busy, it's no wonder why people need effective
-	    solutions to meeting new and interesting people. You came to the
-	    right place.
-	    </p>
+			solutions to meeting new and interesting people. You came to the
+			right place.
+			</p>
 
-	    <p class="lead">
-	      <%= link_to "Sign me up!", 'signup', class: "button" %>
-	    </p>
+			<p class="lead">
+				<%= link_to "Sign me up!", new_user_registration_path, class: "button" %>
+			</p>
 		</section>
 
 	<!--First Section -->
@@ -26,9 +33,9 @@
 							<i class="icon big rounded color1 fa fa-cog fa-3x"></i>
 							<h3>Fill Out a Questionnaire</h3>
 							<p>Create a series of questions using our integrated tools which other
-	            users will have to answer. When they're done, their answers will be sent to
-	          you and if you like what their responses were, accept it and you can begin
-	        chatting immediately!</p>
+							users will have to answer. When they're done, their answers will be sent to
+						you and if you like what their responses were, accept it and you can begin
+					chatting immediately!</p>
 						</section>
 					</div>
 					<div class="4u 12u$(medium)">
@@ -36,8 +43,8 @@
 							<i class="icon big rounded color9 fa-wrench fa-3x"></i>
 							<h3>Set Your Preferences</h3>
 							<p>Choose from a variety of matchmaking preferences, such as geographical radius,
-	              or gender -- and we'll take care of the rest.
-	            the rest.</p>
+								or gender -- and we'll take care of the rest.
+							the rest.</p>
 						</section>
 					</div>
 					<div class="4u$ 12u$(medium)">
@@ -45,18 +52,18 @@
 							<i class="icon big rounded color6 fa-heart fa-3x"></i>
 							<h3>Match With Compatible People</h3>
 							<p>On top of having a short profile bibliography, we'll help you create a more
-	            authentic experience with other people through our unique questionnaire system --
-	          ensuring you don't get weirdos or people that don't have the same mindset as you.</p>
+							authentic experience with other people through our unique questionnaire system --
+						ensuring you don't get weirdos or people that don't have the same mindset as you.</p>
 						</section>
 					</div>
 				</div>
 			</div>
 		</section>
 
-	  <!-- end -->
+		<!-- end -->
 
-	  <!-- Second Section -->
-	  <section id="two" class="wrapper style2 special">
+		<!-- Second Section -->
+		<section id="two" class="wrapper style2 special">
 			<div class="container">
 				<header class="major">
 					<h2>Don't believe us?</h2>
@@ -68,21 +75,21 @@
 						 <%= image_tag('profile_placeholder.gif') %>
 							<h4>Michael Jones</h4>
 							<p>I was on Tinder before I found QMi, and it was the greatest
-	            switch I've ever made. I've met authentic people who have more in common
-	          with me, and it's amazing.</p>
+							switch I've ever made. I've met authentic people who have more in common
+						with me, and it's amazing.</p>
 						</section>
 						<section class="3u 6u$(medium) 12u$(xsmall) profile">
 							<%= image_tag('profile_placeholder.gif') %>
 							<h4>Sharon Smith</h4>
 							<p>All other online dating apps I've tried have left me feeling
-	            unsatisified and like I've wasted my time. QMi is great.</p>
+							unsatisified and like I've wasted my time. QMi is great.</p>
 						</section>
 						<section class="3u 6u(medium) 12u$(xsmall) profile">
 							<%= image_tag('profile_placeholder.gif') %>
 							<h4>Bobby Chan</h4>
 							<p>QMi is a great application for anyone who's serious about
-	            the online dating scene. It's never been easier to get meet
-	          like-minded individuals who share a similar mindset to yours.</p>
+							the online dating scene. It's never been easier to get meet
+						like-minded individuals who share a similar mindset to yours.</p>
 						</section>
 						<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
 							<%= image_tag('profile_placeholder.gif') %>
@@ -91,4 +98,4 @@
 						</section>
 					</div>
 				</section>
-</body>
+	<% end %>

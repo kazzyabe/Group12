@@ -1,7 +1,7 @@
-class WelcomeController < ApplicationController
-  before_action :current_user, only: [:index, :show]
-  before_action :require_admin, only: [:destroy]
-
+class WelcomeController < ApplicationController  
   def index
+  end
+
+  def landing
   end
 end
