@@ -2,6 +2,14 @@
 	<!-- Main -->
 		<section id="banner">
 			<h2>It's nice to see you again, <%= current_user.username %></h2>
+			<p>
+				Profile <br>
+				Username: <%= current_user.username %> <br />
+				Email: <%= current_user.email %> <br />
+				<% if current_user.role == "admin" %>
+					Role: Admin <br />
+				<% end %>
+			</p>
 			<p>Ready to meet new people?</p>
 		</section>
 <% else %>

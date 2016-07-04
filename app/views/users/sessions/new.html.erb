@@ -2,7 +2,7 @@
       <h2>We're as ready as you are.</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.email_field :email, :placeholder => 'email', :style => "text-align: center", autofocus: true %> <br />
+        <%= f.text_field :username, :placeholder => 'username', :style => "text-align: center", autofocus: true %> <br />
         <%= f.password_field :password, :placeholder => 'password', :style => "text-align: center", autocomplete: "off" %> <br />
 
         <% if devise_mapping.rememberable? -%>

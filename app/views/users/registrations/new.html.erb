@@ -4,7 +4,9 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <%= f.email_field :email, :placeholder => 'email', autofocus: true, :style => "text-align: center" %> <br />
+  <%= f.text_field :username, :placeholder => 'username', autofocus: true, :style => "text-align: center" %> <br />
+
+  <%= f.email_field :email, :placeholder => 'email', :style => "text-align: center" %> <br />
 
   <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
