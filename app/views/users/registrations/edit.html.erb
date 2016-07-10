@@ -1,17 +1,26 @@
-<section id="banner2">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<style>
+.edit_labels{
+color: #FFFFFF;
+margin-bottom: 0px;
+}
+</style>
 
+<section id="banner2">
+  <!--<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <hr />-->
+
+<h2> Account Information </h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username, :placeholder => 'username', :style => "text-align: center", autofocus: true %> <br />
+      <%= f.label :username, "Your Username", :class => "edit_labels"%>
+      <%= f.text_field :username, :placeholder => 'username', :style => "text-align: center", autofocus: true, :readonly => "true" %><br />
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, :placeholder => 'email', autofocus: true, :style => "text-align: center" %>
+      <%= f.label :email, "Your Email", :class => "edit_labels" %>
+      <%= f.email_field :email, :placeholder => 'email', autofocus: true, :style => "text-align: center" %><br />
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,30 +28,49 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, :placeholder => 'password', autocomplete: "off", :style => "text-align: center" %>
+      <%= f.label :password, "New Password", :class => "edit_labels" %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, :placeholder => 'password', autocomplete: "off", :style => "text-align: center" %><br />
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, :placeholder => 'Confirm your password', autocomplete: "off", :style => "text-align: center" %>
+      <%= f.label :password_confirmation, "Enter Your New Password Again!", :class => "edit_labels" %>
+      <%= f.password_field :password_confirmation, :placeholder => 'Confirm your new password', autocomplete: "off", :style => "text-align: center" %><br />
     </div>
 
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, :placeholder => 'Current password', autocomplete: "off", :style => "text-align: center" %>
-    </div>
+
+
+    <div>
+  &nbsp;
+  </div>
+
+  <hr />
+
+  <h2> Preferences </h2>
+
+  <div class="field">
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label :gender, "Male", :value => "Male" %>
+    <%= f.radio_button :gender, "female" %>
+    <%= f.label :gender, "Female", :value => "Female" %>
+  </div>
+
+  <hr />
+
+  <div class="field">
+    <%= f.label :current_password, "Your Current Password", :class => "edit_labels" %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, :placeholder => 'Current password', autocomplete: "off", :style => "text-align: center" %> <br />
+  </div>
 
     <div class="actions">
       <%= f.submit "Update", class: "btn-submit" %>
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
+<hr />
 
   <p>
-    Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-submit" %>
-    <%= link_to "Back", :back %>
+    <font size="12">Unhappy?</font> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-submit" %>
+    <%= link_to "Back", :back, class: "button special" %>
   </p>
 
 </section>

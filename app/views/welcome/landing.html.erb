@@ -1,11 +1,12 @@
 <% if user_signed_in? %>
 	<!-- Main -->
-		<section id="banner">
-			<h2>It's nice to see you again, <%= current_user.username %></h2>
+		<section id="banner2">
+			<h2>It's nice to see you again, <%= current_user.username.capitalize %></h2>
 			<p>
 				Profile <br>
 				Username: <%= current_user.username %> <br />
 				Email: <%= current_user.email %> <br />
+				gender: <%= current_user.gender %>
 				<% if current_user.role? %>
 					Role: Admin <br />
 				<% end %>

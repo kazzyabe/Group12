@@ -26,7 +26,7 @@
 </head>
 <body id="landing">
   <header id="header">
-    <h1>Welcome</h1>
+    <h1>QMi</h1>
     <nav id="nav">
       <ul>
         <li><%=link_to 'Home', '/' %></li>
@@ -34,12 +34,12 @@
         <% if user_signed_in? %>
           <!-- current_user : gives currently logged in user's object-->
           <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-          <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% if current_user.role? %>
             <li><%= link_to 'admin', '/admin' %></li>
           <% end %>
         <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <!-- unnecessary  <li><%= link_to "Sign Up", new_user_registration_path %></li>-->
           <li><%= link_to "Already have an account?", new_user_session_path, class: "button special" %></li>
         <% end %>
       </ul>
