@@ -1,8 +1,9 @@
 <% if user_signed_in? %>
 	<!-- Main -->
 		<section id="banner2">
-							<% if (current_user.gender == nil && current_user.realname == nil && current_user.age == nil && current_user.interestedin == nil) == nil %>
-			<h2>It's nice to see you again, <%= current_user.username.capitalize %></h2>
+			<!-- should update this first if statement conditional for validated/ready user -->
+							<% if ((current_user.gender != "male") && (current_user.gender != "female") && (current_user.interestedin != "male") && (current_user.interestedin != "female")) %>
+			<h2>Welcome to QMi, <%= current_user.username.capitalize %></h2>
 
 				<p> Whoa! Before we can get started, we need you to set up your user profile! </p>
 				<p style="font-size:20px"> Just click the button below, and be sure to fill out
