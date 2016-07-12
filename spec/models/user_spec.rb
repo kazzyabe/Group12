@@ -24,4 +24,18 @@ RSpec.describe User, :type => :model do
     user.password_confirmation = nil
     expect(user).not_to be_valid
   end
+
+  describe 'same username or email' do
+    it "isn't valid if username is not unique" do
+      user1 = User.new(username: 'user')
+      user2 = User.new(username: 'user')
+      expect(user2).not_to be_valid
+    end
+
+    it "isn't valid if email is not unique" do
+      user1 = User.new(email: 'user@sfu.ca')
+      user2 = User.new(email: 'user@sfu.ca')
+      expect(user2).not_to be_valid
+    end
+  end
 end
