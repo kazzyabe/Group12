@@ -13,7 +13,7 @@
 
     <div class="field">
       <%= f.label :email, "Your Email", :class => "edit_labels" %>
-      <%= f.email_field :email, :placeholder => 'Email', autofocus: true, :style => "text-align: center" %><br />
+      <%= f.email_field :email, :placeholder => 'Email', autofocus: true, :style => "text-align: center", :readonly => "true" %><br />
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -38,14 +38,48 @@
 
   <hr />
 
-  <h2> Preferences </h2>
+  <h2 id="Pref"> Preferences </h2>
 
-  <div class="field">
+  <div class="field"> <!-- real name -->
+    <%= f.label :realname, "What's your first name?", :class => "edit_labels" %>
+    <%= f.text_field :realname, :placeholder => "First Name", :style => "text-align: center" %>
+  </div>
+
+  <br />
+
+  <div class="field"> <!-- biography -->
+    <%= f.label :biography, "Write something about yourself that will interest others!", :class => "edit_labels" %>
+    <%= f.text_area :biography, :id => "biography" %>
+  </div>
+
+  <br />
+
+  <div class="field"> <!-- user's gender -->
+    <%= f.label :gender, "What's your gender", :class => "edit_labels" %>
     <%= f.radio_button :gender, "male" %>
     <%= f.label :gender, "Male", :value => "Male" %>
     <%= f.radio_button :gender, "female" %>
     <%= f.label :gender, "Female", :value => "Female" %>
   </div>
+
+  <br />
+
+  <div class="field"> <!-- gender the user is interested in -->
+    <%= f.label :interestedin, "What gender are you attracted to?", :class => "edit_labels" %>
+    <%= f.radio_button :interestedin, "male" %>
+    <%= f.label :interestedin, "Male", :value => "Male" %>
+    <%= f.radio_button :interestedin, "female" %>
+    <%= f.label :interestedin, "Female", :value => "Female" %>
+  </div>
+
+  <br />
+
+  <div class="field"> <!-- age -->
+    <%= f.label :age, "What's your age?", :class => "edit_labels" %>
+    <%= f.select :age, (18..72), :class => "age_drop_down" %>
+  </div>
+
+
 
   <hr />
 

@@ -1,6 +1,6 @@
 <section id="banner2">
   <h2>You've made the right choice.</h2>
-
+<div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -17,6 +17,7 @@
 
   <%= f.submit "Sign up", class: "btn-submit" %>
   <% end %>
+</div>
 
 <hr />
 <p> Have an account already? </p>
