@@ -1,10 +1,3 @@
-<style>
-.edit_labels{
-color: #FFFFFF;
-margin-bottom: 0px;
-}
-</style>
-
 <section id="banner2">
   <!--<h2>Edit <%= resource_name.to_s.humanize %></h2>
   <hr />-->
@@ -15,12 +8,12 @@ margin-bottom: 0px;
 
     <div class="field">
       <%= f.label :username, "Your Username", :class => "edit_labels"%>
-      <%= f.text_field :username, :placeholder => 'username', :style => "text-align: center", autofocus: true, :readonly => "true" %><br />
+      <%= f.text_field :username, :placeholder => 'Username', :style => "text-align: center", autofocus: true, :readonly => "true" %><br />
     </div>
 
     <div class="field">
       <%= f.label :email, "Your Email", :class => "edit_labels" %>
-      <%= f.email_field :email, :placeholder => 'email', autofocus: true, :style => "text-align: center" %><br />
+      <%= f.email_field :email, :placeholder => 'Email', autofocus: true, :style => "text-align: center" %><br />
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -29,12 +22,12 @@ margin-bottom: 0px;
 
     <div class="field">
       <%= f.label :password, "New Password", :class => "edit_labels" %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, :placeholder => 'password', autocomplete: "off", :style => "text-align: center" %><br />
+      <%= f.password_field :password, :placeholder => 'New Password', autocomplete: "off", :style => "text-align: center" %><br />
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation, "Enter Your New Password Again!", :class => "edit_labels" %>
-      <%= f.password_field :password_confirmation, :placeholder => 'Confirm your new password', autocomplete: "off", :style => "text-align: center" %><br />
+      <%= f.password_field :password_confirmation, :placeholder => 'Confirm Your New Password', autocomplete: "off", :style => "text-align: center" %><br />
     </div>
 
 
@@ -58,7 +51,7 @@ margin-bottom: 0px;
 
   <div class="field">
     <%= f.label :current_password, "Your Current Password", :class => "edit_labels" %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, :placeholder => 'Current password', autocomplete: "off", :style => "text-align: center" %> <br />
+    <%= f.password_field :current_password, :placeholder => 'Current Password', autocomplete: "off", :style => "text-align: center" %> <br />
   </div>
 
     <div class="actions">
@@ -69,8 +62,8 @@ margin-bottom: 0px;
 <hr />
 
   <p>
-    <font size="12">Unhappy?</font> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-submit" %>
-    <%= link_to "Back", :back, class: "button special" %>
+    <font size="12">Unhappy?</font> <%= button_to "Cancel My Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-submit" %>
+    <%= link_to "Back", '/', class: "button special" %>
   </p>
 
 </section>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <title>QMi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -45,11 +46,12 @@
       </ul>
     </nav>
   </header>
+
   <% if notice %>
-    <p><%= notice %></p>
+    <div class="devise_locales_styled"><%= notice %></div>
   <% end %>
   <% if alert %>
-    <p><%= alert %></p>
+    <div class="devise_locales_styled"><%= alert %></div>
   <% end %>
 
   <%= yield %>

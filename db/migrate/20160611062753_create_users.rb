@@ -7,6 +7,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :salt
 
       t.string :gender
+      t.string :interestedin
+      t.integer :age
+      t.string :biography
+      t.string :realname
 
       t.timestamps null: false
     end

@@ -1,8 +1,14 @@
 <% if user_signed_in? %>
 	<!-- Main -->
 		<section id="banner2">
+							<% if current_user.gender == nil %>
 			<h2>It's nice to see you again, <%= current_user.username.capitalize %></h2>
 			<p>
+				<p> Whoa! Before we can get started, we need you to set up your user profile! </p>
+				<p style="font-size:20px"> Just click the button below, and be sure to fill out
+					<u>all</u> of the preferences fields! </p>
+				<%= link_to "Set up my Account", edit_user_registration_path, class: "button" %>
+				<% else %>
 				Profile <br>
 				Username: <%= current_user.username %> <br />
 				Email: <%= current_user.email %> <br />
@@ -12,6 +18,10 @@
 				<% end %>
 			</p>
 			<p>Ready to meet new people?</p>
+			<%= link_to "Let's get started!", '/', class: "button" %> <!-- this needs to have
+			 route changed for when page is developed -->
+			<% end %>
+
 		</section>
 <% else %>
 	<!-- Before login -->
