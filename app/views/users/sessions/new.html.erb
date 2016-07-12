@@ -1,3 +1,13 @@
+<style>
+.new_labels{
+color: #FFFFFF;
+}
+
+
+</style>
+
+
+
 <section id="banner2">
       <h2>We're as ready as you are.</h2>
 
@@ -7,10 +17,16 @@
 
         <% if devise_mapping.rememberable? -%>
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %> <br />
+          <%= f.label :remember_me, "Remember Me", :class => "new_labels" %> <br />
         <% end -%>
 
         <%= f.submit "Log in", class: "btn-submit" %>
       <% end %>
 
-    </section>
+      <hr />
+
+      <p> Don't have an account? </p>
+      <%= link_to "Sign up", new_user_registration_path, class: "button" %>
+
+
+</section>
