@@ -35,7 +35,13 @@
       </div>
       <div class="modal-body"> <!-- quiz content goes here -->
         quiz content here
-				
+				<%= form_for @quiz do |f| %>
+				<div class="field"> <!-- question 1 name -->
+					<%= f.label :q1, "What will be your first question?", :class => "edit_labels", :maxlength => 10 %>
+					<%= f.text_field :q1, :placeholder => "Question 1", :style => "text-align: center" %>
+				</div>
+				<%= f.submit "Create" %>
+				<% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -44,7 +50,7 @@
     </div>
   </div>
 </div>
-<!-- -->
+<!-- End Modal -->
 
 
 				<% if current_user.role? %> <!-- ADMIN USER -->
@@ -52,7 +58,7 @@
 				<% end %>
 			</p>
 			<p>Ready to meet new people?</p>
-			<%= link_to "I want to start matching!", '/', class: "button" %> <!-- this needs to have
+			<%= link_to "I want to start matching!", users_path, class: "button" %> <!-- this needs to have
 			 route changed for when page is developed -->
 			<% end %>
 
