@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20160715075119) do
   enable_extension "plpgsql"
 
   create_table "quizzes", force: :cascade do |t|
-    t.string   "q1"
-    t.string   "q2"
-    t.string   "q3"
-    t.string   "q4"
-    t.string   "q5"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "q1",         default: ""
+    t.string   "q2",         default: ""
+    t.string   "q3",         default: ""
+    t.string   "q4",         default: ""
+    t.string   "q5",         default: ""
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "user_id"
   end
 
