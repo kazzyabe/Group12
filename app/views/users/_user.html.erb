@@ -1,5 +1,5 @@
 <!-- define formatting of users here -->
-
+<% unless user.quiz.nil? %> <!-- eliminates admin quiz being nil -->
 <%= user.username %>
-
-<%= user.quiz %>
+<%= user.quiz.q1 %>
+<% end %>

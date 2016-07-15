@@ -19,6 +19,7 @@ class QuizzesController < ApplicationController
    end
 
    def show
+     @quizzes = Quiz.all
    end
 
 end
