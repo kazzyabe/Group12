@@ -5,4 +5,5 @@ class WelcomeController < ApplicationController
   def landing
     @quiz = Quiz.new
   end
+  
 end
