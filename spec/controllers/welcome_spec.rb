@@ -13,4 +13,17 @@ RSpec.describe WelcomeController, :type => :controller do
       expect(response).to render_template("landing")
     end
   end
+
+  describe "GET landing page when loged in" do
+    login_user
+
+    it "should get landing" do
+      get 'landing'
+      expect(response).to be_success
+    end
+
+    it "should have a current_user" do
+      expect(:current_user).to_not eq(nil)
+    end
+  end
 end
