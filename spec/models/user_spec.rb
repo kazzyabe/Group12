@@ -40,14 +40,21 @@ RSpec.describe User, :type => :model do
   end
 
   describe 'valid user' do
-    it "is valid if user has username, email, password, password_confirmation" do
+    it "is valid when user has username, email, password, password_confirmation" do
       user = build(:user)
       expect(user).to be_valid
     end
+  end
 
-    it "is valid if admin has username, email, password, password_confirmation, role" do
+  describe 'valid admin' do
+    it "is valid when admin has username, email, password, password_confirmation, role" do
       admin = build(:admin)
       expect(admin).to be_valid
+    end
+
+    it "has the role admin" do
+      admin = build(:admin)
+      expect(admin.role).to eq('admin')
     end
   end
 end

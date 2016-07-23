@@ -14,7 +14,7 @@ RSpec.describe WelcomeController, :type => :controller do
     end
   end
 
-  describe "GET landing page when loged in" do
+  describe "GET landing page when logged in" do
     login_user
 
     it "should get landing" do
