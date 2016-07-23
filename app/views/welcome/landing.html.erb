@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? %> <!-- USER LOG IN
 	<!-- Main -->
 		<section id="banner2">
 			<!-- should update this first if statement conditional for validated/ready user -->
@@ -17,12 +17,65 @@
 				Email: <%= current_user.email %> <br />
 				gender: <%= current_user.gender %>
 				age: <%= current_user.age %>
-				<% if current_user.role? %>
+				id: <%= current_user.id %>
+
+				<br />
+				<br />
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			  Create/Edit Quiz
+				</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Your Current Quiz</h4>
+      </div>
+      <div class="modal-body"> <!-- quiz content goes here -->
+        quiz content here
+
+				<%= form_for @quiz do |f| %>
+				<div class="field"> <!-- question 1 name -->
+					<%= f.label :q1, "What will be your first question?", :class => "edit_labels", :maxlength => 10 %>
+					<%= f.text_field :q1, :placeholder => "Question 1",  :style => "text-align: center" %>
+				</div>
+				<div class="field"> <!-- question 2 name -->
+					<%= f.label :q2, "What will be your second question?", :class => "edit_labels", :maxlength => 10 %>
+					<%= f.text_field :q2, :placeholder => "Question 2", :style => "text-align: center" %>
+				</div>
+				<div class="field"> <!-- question 3 name -->
+					<%= f.label :q3, "What will be your third question?", :class => "edit_labels", :maxlength => 10 %>
+					<%= f.text_field :q3, :placeholder => "Question 3",  :style => "text-align: center" %>
+				</div>
+				<div class="field"> <!-- question 4 name -->
+					<%= f.label :q4, "What will be your fourth question?", :class => "edit_labels", :maxlength => 10 %>
+					<%= f.text_field :q4, :placeholder => "Question 4",  :style => "text-align: center" %>
+				</div>
+				<div class="field"> <!-- question 5 name -->
+					<%= f.label :q5, "What will be your fifth question?", :class => "edit_labels", :maxlength => 10 %>
+					<%= f.text_field :q5, :placeholder => "Question 5",  :style => "text-align: center" %>
+				</div>
+				<%= f.submit "Create" %>
+				<% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
+
+
+				<% if current_user.role? %> <!-- ADMIN USER -->
 					Role: Admin <br />
 				<% end %>
 			</p>
 			<p>Ready to meet new people?</p>
-			<%= link_to "Let's get started!", '/', class: "button" %> <!-- this needs to have
+			<%= link_to "I want to start matching!", users_path, class: "button" %> <!-- this needs to have
 			 route changed for when page is developed -->
 			<% end %>
 

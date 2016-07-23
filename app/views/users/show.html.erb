@@ -1,0 +1,23 @@
+<!-- need an if statement here to check for quiz "acceptance" -->
+<% if @user.quiz.q1 != "" %>
+<%= @user.quiz.q1 %>
+<p> should be reply field 1 here </p>
+<% end %>
+<% if @user.quiz.q2 != "" %>
+<%= @user.quiz.q2 %>
+<p> should be reply field 2 here </p>
+<% end %>
+<% if @user.quiz.q3 != "" %>
+<%= @user.quiz.q3 %>
+<p> should be reply field 3 here </p>
+<% end %>
+<% if @user.quiz.q4 != "" %>
+<%= @user.quiz.q4 %>
+<p> should be reply field 4 here </p>
+<% end %>
+<% if @user.quiz.q5 != "" %>
+<%= @user.quiz.q5 %>
+<p> should be reply field 5 here </p>
+<% end %>
+
+<!-- else display user information -->

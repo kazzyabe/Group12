@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+  has_one :quiz
 
   validates :username,
   :presence => true,
