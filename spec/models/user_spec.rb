@@ -38,4 +38,16 @@ RSpec.describe User, :type => :model do
       expect(user2).not_to be_valid
     end
   end
+
+  describe 'valid user' do
+    it "is valid if user has username, email, password, password_confirmation" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
+
+    it "is valid if admin has username, email, password, password_confirmation, role" do
+      admin = build(:admin)
+      expect(admin).to be_valid
+    end
+  end
 end
