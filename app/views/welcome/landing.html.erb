@@ -38,24 +38,24 @@
 
 				<%= form_for @quiz do |f| %>
 				<div class="field"> <!-- question 1 name -->
-					<%= f.label :q1, "What will be your first question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q1, :placeholder => "Question 1",  :style => "text-align: center" %>
+					<%= f.label :q1, "What will be your first question?", :class => "edit_labels" %>
+					<%= f.text_field :q1, :placeholder => "Question 1",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 2 name -->
-					<%= f.label :q2, "What will be your second question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q2, :placeholder => "Question 2", :style => "text-align: center" %>
+					<%= f.label :q2, "What will be your second question?", :class => "edit_labels"%>
+					<%= f.text_field :q2, :placeholder => "Question 2", :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 3 name -->
-					<%= f.label :q3, "What will be your third question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q3, :placeholder => "Question 3",  :style => "text-align: center" %>
+					<%= f.label :q3, "What will be your third question?", :class => "edit_labels" %>
+					<%= f.text_field :q3, :placeholder => "Question 3",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 4 name -->
-					<%= f.label :q4, "What will be your fourth question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q4, :placeholder => "Question 4",  :style => "text-align: center" %>
+					<%= f.label :q4, "What will be your fourth question?", :class => "edit_labels" %>
+					<%= f.text_field :q4, :placeholder => "Question 4",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 5 name -->
-					<%= f.label :q5, "What will be your fifth question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q5, :placeholder => "Question 5",  :style => "text-align: center" %>
+					<%= f.label :q5, "What will be your fifth question?", :class => "edit_labels" %>
+					<%= f.text_field :q5, :placeholder => "Question 5",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<%= f.submit "Create" %>
 				<% end %>
