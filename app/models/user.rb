@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
 
-
-  geocoded_by :ip_address,
-    :latitude => :lat, :longitude => :lon
+  geocoded_by :current_sign_in_ip,
+    :latitude => :lat, :longitude => :lon, :address => :lastlocation
   after_validation :geocode
-  
+
   has_one :quiz
 
   validates :username,
