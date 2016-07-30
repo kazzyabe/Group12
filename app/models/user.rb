@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :lastlocation, :lon, :lat
+
   geocoded_by :current_sign_in_ip,
     :latitude => :lat, :longitude => :lon, :address => :lastlocation
   after_validation :geocode
