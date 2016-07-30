@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
     :latitude => :lat, :longitude => :lon
   after_validation :geocode
   reverse_geocoded_by :latitude, :longitude,
-    :address => :location
+    :address => :lastlocation
   after_validation :reverse_geocode
-  
+
   has_one :quiz
 
   validates :username,
