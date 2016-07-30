@@ -2,11 +2,8 @@ class User < ActiveRecord::Base
 
 
   geocoded_by :current_sign_in_ip,
-    :latitude => :lat, :longitude => :lon, :address_attr => :lastlocation
+    :latitude => :lat, :longitude => :lon, "test" => :lastlocation
   after_validation :geocode
-  #reverse_geocoded_by :lat, :lon,
-  #  :address => :lastlocation
-  #after_validation :reverse_geocode
 
   has_one :quiz
 
