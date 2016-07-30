@@ -34,6 +34,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
+# geocoder
+gem 'geocoder'
+
 # bootstrap
 #gem 'bootstrap-sass', '3.2.0.0'
 #gem 'less-rails'
