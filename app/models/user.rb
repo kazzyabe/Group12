@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   geocoded_by :current_sign_in_ip,
     :latitude => :lat, :longitude => :lon, :address => :lastlocation
-  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+  after_validation :geocode
   #reverse_geocoded_by :lat, :lon,
   #  :address => :lastlocation
   #after_validation :reverse_geocode
