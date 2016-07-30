@@ -11,7 +11,6 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :age
       t.string :biography
       t.string :realname
-
       t.timestamps null: false
     end
   end
