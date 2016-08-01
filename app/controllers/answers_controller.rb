@@ -1,11 +1,17 @@
 class AnswersController < ApplicationController
 
+  def new
+    @user = current_user
+    @answer = @user.answers.build
+  end
+
   def edit
     @answer = Answer.find(params:[id])
   end
 
   def create
-    @answer = current_user.answers.build(answer_params)
+    @user = current_user
+    @answer = @user.answers.build(answer_params)
     if @answer.save
       flash[:success] = "Updated"
       redirect_to '/'
