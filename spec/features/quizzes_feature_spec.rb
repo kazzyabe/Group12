@@ -21,7 +21,25 @@ RSpec.feature "admin management", :type => :feature do
     click_button 'Update'
   end
 
-  scenario "see Create/Edit Quiz" do
-    expect(page).to have_button("Create/Edit Quiz")
+  scenario "see Create Quiz" do
+    expect(page).to have_button("Create Quiz")
+  end
+
+  scenario "click create quiz" do
+    click_button 'Create Quiz'
+    expect(page).to have_text("Your Current Quiz")
+  end
+
+  scenario "create a quiz" do
+    click_button 'Create Quiz'
+    fill_in 'Question 1', with: 'q1?'
+    fill_in 'Question 2', with: 'q2?'
+    fill_in 'Question 3', with: 'q3?'
+    fill_in 'Question 4', with: 'q4?'
+    fill_in 'Question 5', with: 'q5?'
+    click_button 'Create'
+    expect(page).to have_button("Edit Quiz")
+    click_button 'Edit Quiz'
+    expect(page).to have_field 'Question 1', with: 'q1?'
   end
 end
