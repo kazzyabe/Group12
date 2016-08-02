@@ -17,4 +17,10 @@ RSpec.feature "admin management", :type => :feature do
     click_link 'Set up my Account'
     expect(page).to have_text("Account Information")
   end
+
+  scenario "set up the account info" do
+    click_link 'Set up my Account'
+    fill_in 'First name', with: 'Admin'
+    fill_in 'Write something about yourself that will interest others!', with: "test"
+  end
 end
