@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_one :lat
-  has_one :lon
-  
+
+
   geocoded_by :current_sign_in_ip,
     :latitude => :lat, :longitude => :lon, :address => :lastlocation
   after_validation :geocode
