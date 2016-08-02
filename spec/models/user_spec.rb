@@ -38,6 +38,7 @@ RSpec.describe User, :type => :model do
       expect(user2).not_to be_valid
     end
   end
+<<<<<<< HEAD
 
   describe 'valid user' do
     it "is valid when user has username, email, password, password_confirmation" do
@@ -57,4 +58,6 @@ RSpec.describe User, :type => :model do
       expect(admin.role).to eq('admin')
     end
   end
+=======
+>>>>>>> Answers
 end

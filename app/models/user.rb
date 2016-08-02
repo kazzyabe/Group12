@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   has_one :quiz
+  has_many :answers
+  has_many :answered_quizzes, through: :answers, source: :quiz
 
   validates :username,
   :presence => true,
