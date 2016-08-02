@@ -12,4 +12,9 @@ RSpec.feature "admin management", :type => :feature do
   scenario "see Set up my account" do
     expect(page).to have_link("Set up my Account")
   end
+
+  scenario "go to account set up page" do
+    click_link 'Set up my Account'
+    expect(page).to have_text("Account Information")
+  end
 end
