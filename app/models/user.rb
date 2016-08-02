@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
  def self.find_first_by_auth_conditions(warden_conditions)
    conditions = warden_conditions.dup
    if login = conditions.delete(:login)
-     #認証の条件式を変更する
+     #allow login with username
      where(conditions).where(["username = :value", { :value => username }]).first
    else
      where(conditions).first
