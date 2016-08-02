@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Welcome management", :type => :feature do
+RSpec.feature "signup management", :type => :feature do
   scenario "With valid input" do
     visit new_user_registration_path
     fill_in 'username', with: 'test'
