@@ -12,18 +12,29 @@
 				<% else %>
 				<h2>It's nice to see you again, <%= current_user.realname.capitalize %></h2>
 				<p>
-				Profile <br>
-				Username: <%= current_user.username %> <br />
+				<span style="font-size:42px">Does this look right to you?</span> <br>
+				Your Username: <%= current_user.username %> <br />
 				Email: <%= current_user.email %> <br />
-				gender: <%= current_user.gender %>
-				age: <%= current_user.age %>
-				id: <%= current_user.id %>
+				<% if current_user.biography == ""%>
+				<% else %>
+				A little bit about you: <%= current_user.biography %> <br />
+				<% end %>
+				Your Gender: <%= current_user.gender.capitalize %> <br />
+				Gender You're Interested In: <%= current_user.interestedin.capitalize %> <br />
+				Your Age: <%= current_user.age %> <br />
 
 				<br />
 				<br />
+				<% if current_user.quiz.nil? %>
 				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-			  Create/Edit Quiz
+			  Create Quiz
 				</button>
+				<% else %>
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			  Edit Quiz
+				</button>
+				<% end %>
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -34,35 +45,33 @@
         <h4 class="modal-title" id="myModalLabel">Your Current Quiz</h4>
       </div>
       <div class="modal-body"> <!-- quiz content goes here -->
-        quiz content here
-
 				<%= form_for @quiz do |f| %>
 				<div class="field"> <!-- question 1 name -->
-					<%= f.label :q1, "What will be your first question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q1, :placeholder => "Question 1",  :style => "text-align: center" %>
+					<%= f.label :q1, "What will be your first question?", :class => "edit_labels" %>
+					<%= f.text_field :q1, :placeholder => "Question 1",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 2 name -->
-					<%= f.label :q2, "What will be your second question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q2, :placeholder => "Question 2", :style => "text-align: center" %>
+					<%= f.label :q2, "What will be your second question?", :class => "edit_labels"%>
+					<%= f.text_field :q2, :placeholder => "Question 2", :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 3 name -->
-					<%= f.label :q3, "What will be your third question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q3, :placeholder => "Question 3",  :style => "text-align: center" %>
+					<%= f.label :q3, "What will be your third question?", :class => "edit_labels" %>
+					<%= f.text_field :q3, :placeholder => "Question 3",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 4 name -->
-					<%= f.label :q4, "What will be your fourth question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q4, :placeholder => "Question 4",  :style => "text-align: center" %>
+					<%= f.label :q4, "What will be your fourth question?", :class => "edit_labels" %>
+					<%= f.text_field :q4, :placeholder => "Question 4",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
 				<div class="field"> <!-- question 5 name -->
-					<%= f.label :q5, "What will be your fifth question?", :class => "edit_labels", :maxlength => 10 %>
-					<%= f.text_field :q5, :placeholder => "Question 5",  :style => "text-align: center" %>
+					<%= f.label :q5, "What will be your fifth question?", :class => "edit_labels" %>
+					<%= f.text_field :q5, :placeholder => "Question 5",  :style => "text-align: center", :maxlength => 100 %>
 				</div>
+				<br />
 				<%= f.submit "Create" %>
 				<% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
