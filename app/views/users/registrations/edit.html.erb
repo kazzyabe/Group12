@@ -16,6 +16,11 @@
       <%= f.email_field :email, :placeholder => 'Email', autofocus: true, :style => "text-align: center", :readonly => "true" %><br />
     </div>
 
+    <div class="field">
+      <%= f.label :lastlocation, "Enter Your Currenty City", :class => "edit_labels" %>
+      <%= f.location_field :lastlocation, :placeholder => 'Current City', autocomplete: "on", :style => "text-align: center" %><br />
+    </div>
+
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
@@ -29,6 +34,7 @@
       <%= f.label :password_confirmation, "Enter Your New Password Again!", :class => "edit_labels" %>
       <%= f.password_field :password_confirmation, :placeholder => 'Confirm Your New Password', autocomplete: "off", :style => "text-align: center" %><br />
     </div>
+
 
 
 
