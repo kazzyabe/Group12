@@ -18,7 +18,7 @@
 
     <div class="field">
       <%= f.label :lastlocation, "Enter Your Currenty City", :class => "edit_labels" %>
-      <%= f.location_field :lastlocation, :placeholder => 'Current City', autocomplete: "on", :style => "text-align: center" %><br />
+      <%= f.text_field :lastlocation, :placeholder => 'Current City', :style => "text-align: center" %><br />
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
