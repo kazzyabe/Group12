@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "admin management", :type => :feature do
+RSpec.feature "admin page management", :type => :feature do
   background do
     User.create!(username: 'admin', email: 'admin@sfu.ca', password: 'adminadmin', password_confirmation: 'adminadmin', role: 'admin')
     visit new_user_session_path
