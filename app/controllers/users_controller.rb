@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 def show
   @user = User.find(params[:id])
+
   if current_user.answers.nil? #! need to fix this
   @answer = Answer.new
 else

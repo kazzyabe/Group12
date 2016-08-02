@@ -34,8 +34,6 @@
         <h4 class="modal-title" id="myModalLabel">Your Current Quiz</h4>
       </div>
       <div class="modal-body"> <!-- quiz content goes here -->
-        quiz content here
-
 				<%= form_for @quiz do |f| %>
 				<div class="field"> <!-- question 1 name -->
 					<%= f.label :q1, "What will be your first question?", :class => "edit_labels" %>
@@ -62,7 +60,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
