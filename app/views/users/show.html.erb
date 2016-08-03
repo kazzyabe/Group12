@@ -1,23 +1,68 @@
 <!-- need an if statement here to check for quiz "acceptance" -->
+<section id="banner2">
+
+<%= form_for @answer do |f| %>
+
 <% if @user.quiz.q1 != "" %>
-<%= @user.quiz.q1 %>
-<p> should be reply field 1 here </p>
+
+<div class="field"> <!-- reply 1  -->
+  <%= f.label :r1, :value => @user.quiz.q1, :class => "edit_labels_answer" %>
+  <%= f.text_field :r1, :placeholder => "What's your Answer?",  :style => "text-align: center" %>
+</div>
+
 <% end %>
+
 <% if @user.quiz.q2 != "" %>
-<%= @user.quiz.q2 %>
-<p> should be reply field 2 here </p>
+
+<div class="field"> <!-- reply 2  -->
+  <%= f.label :r2, :value => @user.quiz.q2, :class => "edit_labels_answer" %>
+  <%= f.text_field :r2, :placeholder => "What's your Answer?",  :style => "text-align: center" %>
+</div>
+
 <% end %>
+
 <% if @user.quiz.q3 != "" %>
-<%= @user.quiz.q3 %>
-<p> should be reply field 3 here </p>
+
+<div class="field"> <!-- reply 3  -->
+  <%= f.label :r3, :value => @user.quiz.q3, :class => "edit_labels_answer" %>
+  <%= f.text_field :r3, :placeholder => "What's your Answer?",  :style => "text-align: center" %>
+</div>
+
 <% end %>
+
 <% if @user.quiz.q4 != "" %>
-<%= @user.quiz.q4 %>
-<p> should be reply field 4 here </p>
+
+<div class="field"> <!-- reply 4  -->
+  <%= f.label :r4, :value => @user.quiz.q4, :class => "edit_labels_answer" %>
+  <%= f.text_field :r4, :placeholder => "What's your Answer?",  :style => "text-align: center" %>
+</div>
+
 <% end %>
+
 <% if @user.quiz.q5 != "" %>
-<%= @user.quiz.q5 %>
-<p> should be reply field 5 here </p>
-<% end %>
+
+<div class="field"> <!-- reply 5  -->
+  <%= f.label :r5, :value => @user.quiz.q5, :class => "edit_labels_answer" %>
+  <%= f.text_field :r5, :placeholder => "What's your Answer?",  :style => "text-align: center" %>
+</div>
+
+<% end %> <!-- reply fields -->
+<br />
+<%= f.submit "Submit Answers" %>
+
+<% end %> <!-- answer loop -->
+<!--<%= link_to "Let's chat!", conversations_path, class: "button" %> -->
+
+<p>
+</p>
+
+<p>
+  <%= link_to "Back", users_path, class: "button special" %>
+</p>
+<hr />
+<br />
+<p> See something you don't agree with? Report it <%= link_to "here.", "" %> </p>
+
+</section>
 
 <!-- else display user information -->

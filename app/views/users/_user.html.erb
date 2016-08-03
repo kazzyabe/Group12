@@ -1,11 +1,14 @@
 <!-- define formatting of users here -->
+
 <% unless user.quiz.nil? %> <!-- eliminates admin quiz being nil -->
 <% unless current_user == user %> <!-- removes current user from being displayed -->
 <%= link_to user do %>
-<section class="3u 6u(medium) 12u$(xsmall) profile">
+<% if current_user.interestedin == user.gender %>
+<div class="3u 6u(medium) 12u$(xsmall) profile displaydiv">
   <%= image_tag('profile_placeholder.gif') %>
-  <h4> <%= user.realname %> </h4>
-</section>
+  <h4> <%= user.realname.capitalize %> </h4>
+</div>
+<% end %>
 <% end %>
 <% end %>
 
